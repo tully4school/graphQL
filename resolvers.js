@@ -17,7 +17,6 @@ class Friend {
 const friendDatabase = {}
 
 //resolver map
-
 export const resolvers = {
   Query: {
     getFriend: ({ id }) => {
