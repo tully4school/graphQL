@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 import { Friends } from './dbConnectors'
-//resolver map
+
+// resolver map
 export const resolvers = {
   Query: {
     getFriend: ({ id }) => {
@@ -21,7 +22,7 @@ export const resolvers = {
 
       newFriend.id = newFriend._id
 
-      return new Promise((reslove, object) => {
+      return new Promise((resolve, object) => {
         newFriend.save(err => {
           if (err) reject(err)
           else resolve(newFriend)

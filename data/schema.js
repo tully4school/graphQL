@@ -12,12 +12,14 @@ const typeDefs = `
         email: String
         contacts: [Contact]
     }
+
     type Alien {
         id: ID
         firstName: String
         lastName: String
         planet: String
     }
+
     type Contact {
         firstName: String
         lastName: String
@@ -43,16 +45,17 @@ const typeDefs = `
         email: String
         contacts: [ContactInput]
     }
+
     input ContactInput {
         firstName: String
-        lastName: String
-
+        lastName: String 
     }
 
     type Mutation {
         createFriend(input: FriendInput): Friend
     }
 `
+
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
 export { schema }

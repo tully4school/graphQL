@@ -5,7 +5,7 @@ import { schema } from './data/schema'
 const app = express()
 
 app.get('/', (req, res) => {
-  res.send('GraphQL is Amazing!')
+  res.send('GraphQL is amazing!')
 })
 
 app.use(
@@ -17,5 +17,5 @@ app.use(
 )
 
 app.listen(8080, () =>
-  console.log('running the server on localhost:8080/graphql')
+  console.log('Running server on port localhost:8080/graphql')
 )
