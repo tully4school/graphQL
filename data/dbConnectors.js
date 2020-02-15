@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import sequelize from 'sequelize'
+import Sequelize from 'sequelize'
 import _ from 'lodash'
 import casual from 'casual'
 
@@ -39,16 +39,16 @@ const sequelize = new Sequelize('database', null, null, {
 })
 
 const Aliens = sequelize.define('aliens', {
-  firsttName: { type: Sequelize.String },
-  lastName: { type: Sequelize.String },
-  planet: { type: Sequelize.String }
+  firstName: { type: Sequelize.STRING },
+  lastName: { type: Sequelize.STRING },
+  planet: { type: Sequelize.STRING }
 })
 
 Aliens.sync({ force: true }).then(() => {
   _.times(10, i => {
     Aliens.create({
-      firstName: casual._first_name,
-      lastName: casual._last_name,
+      firstName: casual.first_name,
+      lastName: casual.last_name,
       planet: casual.word
     })
   })
